@@ -1,4 +1,4 @@
-package polyu.comp.datastructure;
+package polyu.comp.datastructure.assign1;
 
 import java.util.Arrays;
 import java.util.Random;

@@ -1,4 +1,7 @@
-package polyu.comp.datastructure;
+package polyu.comp.datastructure.assign1;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Created by huanganna on 9/30/16.
@@ -61,10 +64,15 @@ public class RemoveAdjacentDuplicate {
     }
 
 
-    public static void main(String[] args) {
-        String a= "mississippi";
-        char[] result = RemoveAdjacentDuplicate.removeAdjacentDuplicate(a.toCharArray(),0,a.length()-1);
+    public static void main(String[] args) throws Exception{
+//        String a= "mississippi";
+        System.out.println("Please enter a string:");
+        InputStreamReader is_reader = new InputStreamReader(System.in);
+        String str = new BufferedReader(is_reader).readLine();
+        System.out.println(str+" "+str.length());
+        char[] result = RemoveAdjacentDuplicate.removeAdjacentDuplicate(str.toCharArray(), 0, str.length() - 1);
 //        char[] result = RemoveAdjacentDuplicate.removeAdjacentDuplicate(new char[]{'b', 'b', 'b','a','a','b','a'},0,1);
+        System.out.print("After removing adjacent duplicate elements: ");
         if(result!=null)
         {
             for(int i=0;i<result.length;i++)

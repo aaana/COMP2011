@@ -1,4 +1,7 @@
-package polyu.comp.datastructure;
+package polyu.comp.datastructure.assign1;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Created by huanganna on 10/2/16.
@@ -34,7 +37,14 @@ public class SecondSmallest {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(SecondSmallest.find(new int[]{1, 1, 2, 3, 4, 2, 5, 0}, 0, 7)[1]);
+    public static void main(String[] args) throws Exception{
+        System.out.println("Please enter an array like 1,1,2,2,3,4,5(separated by ,):");
+        InputStreamReader is_reader = new InputStreamReader(System.in);
+        String str = new BufferedReader(is_reader).readLine();
+        String[] strArr = str.split(",");
+        int[] intArr = new int[strArr.length];
+        for(int i=0;i<intArr.length;i++)
+            intArr[i] = Integer.parseInt(strArr[i]);
+        System.out.println("The second smallest: "+SecondSmallest.find(intArr, 0, intArr.length-1)[1]);
     }
 }

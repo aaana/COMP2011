@@ -165,5 +165,9 @@ public class Sort {
         String s = "()()())";
         System.out.println(s+"is "+(Sort.isBalanced(s.toCharArray())?"":"not ")+"balanced");
 
+        int k = 2;
+        System.out.println("!!!!!"+Math.pow(4,k));
+
     }
 }
+

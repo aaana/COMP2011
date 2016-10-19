@@ -1,4 +1,4 @@
-package polyu.comp.datastructure;
+package polyu.comp.datastructure.assign1;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -148,7 +148,6 @@ public class CourseRegistrySorted {
             result += "Lab"+i+":"+ Arrays.stream(students[i], 0, count[i])
                     .mapToObj(Integer::toString).collect(Collectors.joining(", ")) +"\n";
         }
-
         return result;
     }
 
