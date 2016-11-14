@@ -45,6 +45,7 @@ public class CustomerQueue {
         CustomerQueue customerQueue = new CustomerQueue();
         for(int i=0;i<5;i++)
             customerQueue.enqueue("aa"+i);
+        System.out.println(customerQueue);
         CustomerQueue[] result = customerQueue.split(5);
         for(int i=0;i<result.length;i++)
             System.out.println(result[i]);

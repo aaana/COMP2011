@@ -69,7 +69,7 @@ public class CustomerList {
             return deleteFirst();
         CustomerNode cur = head;
         String result;
-        if(cur.next != tail){
+        while(cur.next != tail){
             cur = cur.next;
         }
         result = tail.name;

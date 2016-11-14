@@ -107,7 +107,6 @@ public class ListOnArray {
 		return result;
 	}
 
-	//todo
 	public int delete(int x) {
 		if(isEmpty()){
 			System.out.println("The list is empty!");

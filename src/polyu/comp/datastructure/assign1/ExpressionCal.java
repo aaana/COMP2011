@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 // 0 == 0 true
 // int[][] a = new int[10][];
 // a[0] = new int[8];
-// a[0] = new int[10];
+// a[1] = new int[10];
 // enqueue: O(1)  dequeue: O(n)[move the elements to left.] ＝》改进：循环队列
 // 对象在heap中，引用在stack中
 

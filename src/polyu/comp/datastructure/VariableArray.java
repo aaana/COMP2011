@@ -147,8 +147,6 @@ public class VariableArray {
     private void quickSort(int left, int right){
         if(left >= right)
             return;
-        if(actualSize <= 1)
-            return;
         int mid = (left + right)/2;
         int pivot = get(mid);
         int i = left,j = right;
