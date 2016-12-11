@@ -7,6 +7,50 @@ import java.security.SecureRandom;
  */
 public class Sort {
 
+    void heapsort (int [] a ) {
+        for (int i = 1; i < a . length ; i ++)
+            insert (a , i );
+        for (int i = a . length - 1; i > 0; i--)
+            deleteMax (a , i );
+    }
+    void deleteMax (int [] a , int end ) {
+        swap(a,0,end);
+        down(a,0,end-1);
+    }
+    void swap(int[]a , int i ,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    void down(int[]a,int cur,int end){
+        if(cur > end)
+            return;
+        int leftChild = 2*cur + 1;
+        if(leftChild > end)
+            return;
+        int rightChild = leftChild + 1;
+        int maxChild = leftChild;
+        if(rightChild <=end && a[rightChild] > a[leftChild]){
+            maxChild = rightChild;
+        }
+        if(a[maxChild] <= a[cur])
+            return;
+        swap(a,cur,maxChild);
+        down(a,maxChild, end);
+    }
+    void insert (int [] a , int end ) {
+        up(a,end);
+    }
+    void up(int[]a,int cur){
+        if(cur < 0)
+            return;
+        int parent = (cur-1)/2;
+        if(a[cur] <= a[parent])
+            return;
+        swap(a,cur,parent);
+        up(a,parent);
+    }
+
     //选择排序，依次选择子数组最小的放在最左边
     public void selectionSort(int[] a){
         int length = a.length;
@@ -53,7 +97,7 @@ public class Sort {
                     exchange = true;
                 }
             }
-            if(exchange==false)
+            if(!exchange)
                 return;
         }
 
@@ -87,14 +131,11 @@ public class Sort {
                 temp[k++] = array[j++];
             }
         }
-        if(i>mid){
-            while(j<=right){
-                temp[k++] = array[j++];
-            }
-        }else{
-            while(i<=mid){
-                temp[k++] = array[i++];
-            }
+        while(j<=right){
+            temp[k++] = array[j++];
+        }
+        while(i<=mid){
+            temp[k++] = array[i++];
         }
         for(int index=0;index<=right-left;index++){
             array[left+index] = temp[index];
@@ -125,7 +166,7 @@ public class Sort {
         // TODO Auto-generated method stub
         Sort sort = new Sort();
         int[] a = {11,2,1,3,5};
-        sort.selectionSort(a);
+        sort.heapsort(a);
         for(int i =0;i<a.length;i++)
             System.out.println(a[i]);
 
